@@ -1,0 +1,45 @@
+<div class="row">
+<div class="col-sm-6">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="showError">
+    <strong>Please verify your credentials.</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">User Name</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="loginUser.userName">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-6">
+      <input type="password" class="form-control" placeholder="Password" [(ngModel)]="loginUser.password">
+    </div>
+  </div>
+  <div class="form-group row">
+
+    <div class="col-sm-6 offset-sm-2">
+      <button class="btn btn-primary" (click)="login()">Login</button>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="card">
+    <div class="card-header">Header</div>
+    <div class="card-body">
+      <!-- <h4>Date Pipe: {{currentDate|date:'dd-MMMM-yyyy hh:mm:ss'}}</h4>   -->
+      <h4>Date Pipe: {{currentDate|date:'short'}}</h4>
+      <h4>Lowercaes Pipe: {{'IAMGOOD'|lowercase}}</h4>
+      <h4>uppercase Pipe: {{'i am tooo goood'|uppercase}}</h4>
+      <h4>Number case Pipe: {{'1000.34464'|number :'10.3'}}</h4>
+      <h4>Percent Pipe: {{'.78'|percent }}</h4>
+      <h4>Slice Pipe: {{'Kiran loves javascript'|slice :0:10 }}</h4>
+      <h4>Currency Pipe: {{'100000'|currency :'EUR' }}</h4>
+      
+      <h4>Json Pipe: {{loginUser|json }}</h4>
+    </div>
+  </div>
+</div>
+</div>
